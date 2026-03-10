@@ -1,0 +1,334 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfólio Thomas Chauar</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#020617;
+color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(2,6,23,0.9);
+z-index:1000;
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+.menu-toggle{
+display:none;
+font-size:22px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.nav-links{
+position:absolute;
+top:60px;
+right:0;
+background:#020617;
+flex-direction:column;
+width:200px;
+padding:20px;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+}
+
+/* HEADER */
+
+header{
+padding-top:120px;
+text-align:center;
+}
+
+h1{
+font-size:40px;
+}
+
+/* SEÇÕES */
+
+section{
+padding:100px 20px;
+max-width:900px;
+margin:auto;
+}
+
+/* PROJETOS */
+
+.container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+width:250px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* SKILLS */
+
+.skill{
+margin:20px 0;
+}
+
+.barra{
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progresso{
+height:12px;
+background:#38bdf8;
+}
+
+/* CONTATO */
+
+.icones{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.icones a{
+font-size:35px;
+color:white;
+transition:0.3s;
+}
+
+.icones a:hover{
+color:#38bdf8;
+}
+
+/* BOTÃO WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+}
+
+.voltar{
+text-align:center;
+margin-top:40px;
+}
+
+.voltar a{
+color:#38bdf8;
+font-weight:bold;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">Thomas</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="nav-links" id="nav-links">
+<a href="#projetos">Projetos</a>
+<a href="#skills">Skills</a>
+<a href="#contato">Contato</a>
+</div>
+
+</nav>
+
+<header id="topo">
+
+<h1>Thomas Chauar</h1>
+<p>Estudante de Desenvolvimento de Sistemas</p>
+
+</header>
+
+<section id="projetos">
+
+<h2>Projetos</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Projeto 1</h3>
+<p>Meu primeiro site.</p>
+</div>
+
+<div class="card">
+<h3>Projeto 2</h3>
+<p>Projeto em desenvolvimento.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="barra">
+<div class="progresso" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="barra">
+<div class="progresso" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="barra">
+<div class="progresso" style="width:60%"></div>
+</div>
+</div>
+
+<div class="voltar">
+<a href="#topo">↑ Voltar ao topo</a>
+</div>
+
+</section>
+
+<section id="contato">
+
+<h2>Contato</h2>
+
+<div class="icones">
+
+<a href="mailto:thomaschauar010907@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://instagram.com/thomas_chauar" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/5515981795044" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/5515981795044" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+
+/* MENU MOBILE */
+
+const toggle = document.getElementById("menu-toggle");
+const links = document.getElementById("nav-links");
+
+toggle.onclick = () => {
+links.classList.toggle("active");
+};
+
+/* SCROLL SUAVE */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+link.addEventListener("click", function(e){
+
+e.preventDefault();
+
+const id = this.getAttribute("href");
+const section = document.querySelector(id);
+
+window.scrollTo({
+top: section.offsetTop - 70,
+behavior: "smooth"
+});
+
+links.classList.remove("active");
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
